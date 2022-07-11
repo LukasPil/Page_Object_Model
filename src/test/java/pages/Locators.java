@@ -19,5 +19,11 @@ public class Locators {
             public static By elementTotal = By.xpath("//*[@id='displayvalue']");
 
         }
+
+        public static class CheckBoxDemo {
+            public static By inputSingleCheckBox = By.xpath("//*[@id='isAgeSelected']");
+            public static By fieldSingleCheckBox = By.xpath("//*[@id='txtAge']");
+
+        }
     }
 }
