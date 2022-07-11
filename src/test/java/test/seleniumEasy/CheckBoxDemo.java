@@ -4,15 +4,20 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import test.BaseTest;
 import utils.Driver;
 
-public class CheckBoxDemo {
+import java.util.prefs.BackingStoreException;
+
+public class CheckBoxDemo extends BaseTest {
 
     @BeforeMethod
-    public void setUp() {
-        Driver.setDriver();
+    @Override
+    public void setUp(){
+        super.setUp();
         pages.seleniumEasy.CheckBoxDemo.open();
     }
+
 
     @Test
     public void testSingleCheckBox() {
@@ -25,8 +30,5 @@ public class CheckBoxDemo {
         Assert.assertEquals(actualMessage, expectedMessage);
     }
 
-    @AfterMethod
-    public void teardown() {
-        Driver.closeDriver();
-    }
+
 }
