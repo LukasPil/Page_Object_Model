@@ -29,4 +29,27 @@ public class SimpleFormDemo {
         Driver.closeDriver();
 
     }
+
+    @Test
+    public void testTwoInputFieldsSeleniumEasy() {
+
+        Driver.setDriver();
+        pages.seleniumEasy.SimpleFormDemo.open();
+        pages.seleniumEasy.SimpleFormDemo.closeAd();
+
+        String inputA = "5";
+        String inputB = "7";
+        String expectedSum = "12";
+        String actualSum;
+
+        pages.seleniumEasy.SimpleFormDemo.enterValueA(inputA);
+        pages.seleniumEasy.SimpleFormDemo.enterValueB(inputB);
+        pages.seleniumEasy.SimpleFormDemo.clickGetTotalButton();
+        actualSum = pages.seleniumEasy.SimpleFormDemo.readTotal();
+
+        Assert.assertEquals(actualSum, expectedSum);
+
+        Driver.closeDriver();
+    }
+
 }

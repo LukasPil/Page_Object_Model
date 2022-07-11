@@ -26,6 +26,7 @@ public class SimpleFormDemo {
         Common.sendKeysToElement(By.xpath("//input[@id='user-message']"), expectedMessage);
     }
 
+
     public static void clickShowMessageButton() {
         Common.clickElement(Locators.SeleniumEasy.SimpleFormDemo.buttonShowMessage);
     }
@@ -34,4 +35,19 @@ public class SimpleFormDemo {
         return Common.getElementText(Locators.SeleniumEasy.SimpleFormDemo.fieldMessage);
     }
 
+    public static void enterValueA(String inputA) {
+        Common.sendKeysToElement(Locators.SeleniumEasy.SimpleFormDemo.inputA, inputA);
+    }
+
+    public static void enterValueB(String inputB) {
+        Common.sendKeysToElement(Locators.SeleniumEasy.SimpleFormDemo.inputB, inputB);
+    }
+
+    public static void clickGetTotalButton() {
+        Common.clickElement(Locators.SeleniumEasy.SimpleFormDemo.buttonGetTotal);
+    }
+
+    public static String readTotal() {
+       return Common.getElementText(Locators.SeleniumEasy.SimpleFormDemo.elementTotal);
+    }
 }
