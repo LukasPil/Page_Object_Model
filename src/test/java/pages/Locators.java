@@ -34,9 +34,28 @@ public class Locators {
         public static class RadioButtonsDemo {
             public static By buttonGetCheckedValue = By.xpath("//*[@id= 'buttoncheck']");
             public static By fieldCheckedValue = By.xpath("//p[@class= 'radiobutton']");
+            public static By buttonGetValues = By.xpath("(//button)[3]");
+            public static By fieldGroupValue = By.xpath("//*[@class='groupradiobutton']");
+
+
             public static By inputByGender(String gender) {
-                return By.xpath(String.format("//*[@name = 'optradio' and @value='%s']", gender));
+                return By.xpath(
+                        String.format("//*[@name = 'optradio' and @value='%s']", gender)
+                );
+            }
+
+            public static By inputByGenderGroup(String gender) {
+                return By.xpath(
+                        String.format("//*[@value='%s' and @name='gender']", gender)
+                );
+            }
+
+            public static By inputByAgeGroup(String ageGroup) {
+                return By.xpath(
+                        String.format("//*[@value='%s' and @name='ageGroup']", ageGroup)
+                );
             }
         }
+
     }
 }
