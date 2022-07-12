@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.Driver;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Common {
 
@@ -24,6 +26,11 @@ public class Common {
     public static WebElement getElement(By locator) {
         return Driver.getDriver().findElement(locator);
     }
+
+    public static List<WebElement> getElements(By locator) {
+        return Driver.getDriver().findElements(locator);
+    }
+
 
     public static void clickElement(By locator) {
         getElement(locator).click();
@@ -42,5 +49,20 @@ public class Common {
         Select selectElement = new Select(webElement);
         selectElement.selectByValue(value);
 
+    }
+
+    public static String getElementAttributeValue(By locator, String attributeName) {
+        return getElement(locator).getAttribute(attributeName);
+    }
+
+    public static List<Boolean> getSelectedStatusOfCheckBoxesByLocator(By locator) {
+        List<WebElement> elemenentsList = getElements(locator);
+        List<Boolean> statusList = new ArrayList<>();
+
+        for (WebElement element : elemenentsList) {
+            statusList.add(element.isSelected());
+
+        }
+        return statusList;
     }
 }
