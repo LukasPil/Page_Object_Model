@@ -34,7 +34,7 @@ public class RadioButtonsDemo extends BaseTest {
     }
 
 
-    @DataProvider(name = "groupRadioButtonGenderAndAgeGroup")
+    @DataProvider(name = "groupRadioButtonGenderAndAgeGroup", parallel = true)
     public Object[][] radioButtonGenderAndAgeGroupDataProvider(){
         return new Object[][]{
                 {"Male", "0 - 5"},
@@ -47,7 +47,7 @@ public class RadioButtonsDemo extends BaseTest {
     }
 
 
-    @Test (dataProvider = "groupRadioButtonGenderAndAgeGroup")
+    @Test (dataProvider = "groupRadioButtonGenderAndAgeGroup", threadPoolSize = 6)
     public void testGroupRadioButtonByGenderAndAgeGroup(String gender, String ageGroup) {
         pages.seleniumEasy.RadioButtonsDemo.selectMaleGender(gender);
         pages.seleniumEasy.RadioButtonsDemo.selectAgegroup(ageGroup);
