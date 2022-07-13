@@ -18,9 +18,9 @@ public class Driver {
     public static void setDriver() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--start-maximized");
-        options.addArguments("--start-in-incognito");
-        options.addArguments("--force-device-scale-factor=0.5");
+//        options.addArguments("--start-maximized");
+//        options.addArguments("--start-in-incognito");
+        options.addArguments("--force-device-scale-factor=0.8");
 
 
         driver.set(new ChromeDriver(options));

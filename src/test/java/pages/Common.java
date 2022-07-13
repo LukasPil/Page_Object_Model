@@ -72,7 +72,7 @@ public class Common {
 
         Actions action = new Actions(Driver.getDriver());
         action.moveToElement(element);
-        action.doubleClick();
+        action.doubleClick(element);
         action.perform();
     }
 
@@ -83,6 +83,16 @@ public class Common {
         Actions action = new Actions(Driver.getDriver());
         action.moveToElement(element);
         action.click();
+        action.perform();
+
+    }
+
+    public static void rightClickByAction(By locator) {
+        WebElement element = getElement(locator);
+
+        Actions action = new Actions(Driver.getDriver());
+        action.moveToElement(element);
+        action.contextClick(element);
         action.perform();
 
     }

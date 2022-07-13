@@ -12,12 +12,22 @@ public class Buttons {
     }
 
     public static void performDoubleclick() {
-        Common.doubleClickByAction(Locators.DemoQa.Buttons.buttonDoubleClick);
+        pages.Common.doubleClickByAction(Locators.DemoQa.Buttons.buttonDoubleClick);
 
     }
 
     public static String readMessageofDoubleClick() {
 
-        return Common.getElementText(Locators.DemoQa.Buttons.fieldDoubleClick);
+        return pages.Common.getElementText(Locators.DemoQa.Buttons.fieldDoubleClick);
+    }
+
+    public static void performRightClick() {
+        pages.Common.rightClickByAction(Locators.DemoQa.Buttons.buttonRightClick);
+
+    }
+
+    public static String readMessageofRightClick() {
+        return pages.Common.getElementText(Locators.DemoQa.Buttons.fieldRightClick);
+
     }
 }

@@ -26,4 +26,13 @@ public class Buttons extends BaseTest {
 
         Assert.assertEquals(actualMessage, expectedMessage);
     }
+
+    @Test
+    public void testRightClick (){
+        String expectedMessage = "You have done a right click";
+        pages.demoQa.Buttons.performRightClick();
+        String actualMessage = pages.demoQa.Buttons.readMessageofRightClick();
+
+        Assert.assertEquals(actualMessage, expectedMessage);
+    }
 }
