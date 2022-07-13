@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class Driver {
 
@@ -16,8 +17,14 @@ public class Driver {
 
     public static void setDriver() {
         WebDriverManager.chromedriver().setup();
-        driver.set(new ChromeDriver());
-        driver.get().manage().window().setSize(new Dimension(1080, 2000));
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--start-maximized");
+        options.addArguments("--start-in-incognito");
+        options.addArguments("--force-device-scale-factor=0.5");
+
+
+        driver.set(new ChromeDriver(options));
+        driver.get().manage().window().setSize(new Dimension(2000, 5000));
 
     }
 
