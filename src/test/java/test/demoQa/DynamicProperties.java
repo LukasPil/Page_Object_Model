@@ -19,10 +19,8 @@ public class DynamicProperties extends BaseTest {
     }
 
     @Test
-    public void testAfterButtonColorChange(){
+    public void testAfterButtonColorChange() {
         pages.demoQa.DynamicProperties.clickButtonAfterColorChange();
-        // mt-4 btn btn-primary before
-        //mt-4 text-danger btn btn-primary
 
     }
 }
