@@ -79,5 +79,11 @@ public class Locators {
             public static By fieldRightClick = By.xpath("//*[@id=\"rightClickMessage\"]");
 
         }
+
+        public static class DynamicProperties {
+            public static By buttonAfterEnabled = By.xpath("//*[@id=\"enableAfter\"]");
+            public static By buttonAfterColorChange = By.xpath("//*[@id=\"colorChange\"]");
+
+        }
     }
 }

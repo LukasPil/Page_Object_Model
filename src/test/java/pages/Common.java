@@ -18,11 +18,6 @@ public class Common {
         Driver.getDriver().get(url);
     }
 
-    public static void waitForElementToBeVisiable(By locator) {
-        WebDriverWait webDriverWait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
-        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-    }
-
 
     public static WebElement getElement(By locator) {
         return Driver.getDriver().findElement(locator);
@@ -76,7 +71,7 @@ public class Common {
         action.perform();
     }
 
-    public static void clickElementByAction(By locator){
+    public static void clickElementByAction(By locator) {
 
         WebElement element = getElement(locator);
 
@@ -94,6 +89,35 @@ public class Common {
         action.moveToElement(element);
         action.contextClick(element);
         action.perform();
+
+    }
+
+    public static void waitForElementToBeVisiable(By locator) {
+        WebDriverWait webDriverWait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+        webDriverWait.until(
+                ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+    public static void waitForElementToBeClickable(By locator) {
+        WebDriverWait webDriverWait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+        webDriverWait.until(
+                ExpectedConditions.elementToBeClickable(locator));
+
+    }
+
+    public static void waitForElementAttributeContains(
+            By locator,
+            String atributeName,
+            String atributeValue) {
+
+        WebDriverWait webDriverWait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+        webDriverWait.until(
+                ExpectedConditions.attributeContains(
+                        locator,
+                        atributeName,
+                        atributeValue
+                )
+        );
 
     }
 }
