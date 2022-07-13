@@ -61,4 +61,13 @@ public class Locators {
         }
 
     }
+
+    public static class DemoQa {
+
+        public static class Buttons {
+            public static By buttonDoubleClick = By.xpath("//*[@id=\"doubleClickBtn\"]");
+            public static By fieldDoubleClick = By.xpath("//*[@id=\"doubleClickMessage\"]");
+
+        }
+    }
 }
