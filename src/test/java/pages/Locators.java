@@ -63,6 +63,14 @@ public class Locators {
     }
 
     public static class DemoQa {
+        public static class Home {
+            public static By menuElements = By.xpath("//*[@class=\"category-cards\"]/div[1]");
+        }
+
+        public static class Elements {
+            public static By menuButtons = By.xpath("//*[@class=\"element-list collapse show\" ]//*[@id=\"item-4\"]");
+
+        }
 
         public static class Buttons {
             public static By buttonDoubleClick = By.xpath("//*[@id=\"doubleClickBtn\"]");

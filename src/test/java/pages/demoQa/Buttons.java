@@ -12,7 +12,7 @@ public class Buttons {
     }
 
     public static void performDoubleclick() {
-        Common.doubleClick(Locators.DemoQa.Buttons.buttonDoubleClick);
+        Common.doubleClickByAction(Locators.DemoQa.Buttons.buttonDoubleClick);
 
     }
 

@@ -11,7 +11,10 @@ public class Buttons extends BaseTest {
     @Override
     public void setUp() {
         super.setUp();
-        pages.demoQa.Buttons.open();
+//        pages.demoQa.Buttons.open();
+        pages.demoQa.Home.open();
+        pages.demoQa.Home.clickElementsPage();
+        pages.demoQa.Elements.clickButtonsPage();
     }
 
     @Test

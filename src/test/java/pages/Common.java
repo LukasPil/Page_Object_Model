@@ -67,12 +67,23 @@ public class Common {
         return statusList;
     }
 
-    public static void doubleClick(By locator) {
+    public static void doubleClickByAction(By locator) {
         WebElement element = getElement(locator);
 
         Actions action = new Actions(Driver.getDriver());
         action.moveToElement(element);
         action.doubleClick();
         action.perform();
+    }
+
+    public static void clickElementByAction(By locator){
+
+        WebElement element = getElement(locator);
+
+        Actions action = new Actions(Driver.getDriver());
+        action.moveToElement(element);
+        action.click();
+        action.perform();
+
     }
 }
