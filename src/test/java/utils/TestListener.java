@@ -8,6 +8,8 @@ import org.testng.ITestResult;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
 public class TestListener implements ITestListener {
@@ -16,8 +18,14 @@ public class TestListener implements ITestListener {
         TakesScreenshot takesScreenshot =(TakesScreenshot) Driver.getDriver();
         File screenshotRaw = takesScreenshot.getScreenshotAs(OutputType.FILE);
 
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH_mm_ss");
+        LocalDateTime dateTime = LocalDateTime.now();
+        String fDateAndTime = dateTime.format(formatter);
+
         String directory = "./screenshots";
-        File screenshotFile = new File(directory + "/screenshot_" + UUID.randomUUID() + ".png");
+        File screenshotFile = new File(
+                directory + "/screenshot_" + fDateAndTime + "_" + UUID.randomUUID() + ".png"
+        );
     // ./screenshots/first_screenshot.png
 
         try {
